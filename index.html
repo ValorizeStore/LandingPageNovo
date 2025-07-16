@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Moda para Toda a Família</title>
+  <link rel="icon" type="image/png" href="imagens/Logo.png">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-NSP2RG4Z');</script>
+  <!-- End Google Tag Manager -->
+  
+  <style>
+    :root {
+      --primary-color: #11051c;      /* Cor principal (roxo escuro) */
+      --secondary-color: #eeeeee;    /* Cor secundária (branco gelo) */
+      --accent-color: #3a0ca3;       /*  Cor de destaque (roxo mais vibrante) */
+      --light-accent: #f0e6ff;       /* Cor de fundo suave */
+      --text-dark: #11051c;          /* Cor escura para textos */
+      --text-light: #eeeeee;         /* Cor clara para textos */
+      --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: var(--secondary-color);
+      color: var(--text-dark);
+      line-height: 1.6;
+    }
+
+    .logo-container {
+      position: relative;
+      width: 100px; 
+      height: 100px;
+      min-width: 100px; 
+      flex-shrink: 0; 
+      background-color:#ffffff;
+      border-radius: 50%;
+      padding: 10px;
+      margin-right: 20px;
+    }
+
+    .logo {
+      width: 100%;
+      height: 100%;
+      object-fit: contain; 
+    }
+    
+
+    header {
+      background: linear-gradient(135deg, var(--primary-color), #2a0a5e);
+      color: var(--text-light);
+      padding: 3rem 1rem;
+      text-align: center;
+      box-shadow: var(--shadow);
+      position: relative;
+      padding-top: 4rem;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center; 
+      padding: 2rem 1rem; 
+      gap: 20px; 
+    }
+    
+    header h1 {
+      margin: 0;
+      font-size: 2.2rem;
+      font-weight: 700;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+    }
+    
+    header p {
+      font-size: 1.2rem;
+      margin-top: 1rem;
+      font-weight: 400;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .hero-image {
+      width: 100%;
+      max-height: 500px;
+      object-fit: cover;
+      object-position: top;
+      display: block;
+      border-bottom: 5px solid var(--primary-color);
+    }
+    
+    .benefits {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      justify-content: center;
+      gap: 1.5rem;
+      padding: 3rem 2rem;
+      background-color: var(--light-accent);
+    }
+    
+    .benefits div {
+      background-color: white;
+      padding: 1.5rem;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      box-shadow: var(--shadow);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border-left: 4px solid var(--accent-color);
+    }
+    
+    .benefits div:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 15px rgba(58, 12, 163, 0.2);
+    }
+    
+    .benefits div::before {
+      content: "✓";
+      color: var(--primary-color);
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+    
+    .offer {
+      background: linear-gradient(to right, var(--light-accent), white);
+      padding: 0rem 1rem;
+      text-align: center;
+      border-top: 1px solid rgba(255, 255, 255, 0.3);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    }
+    
+    .offer h2 {
+      color: var(--primary-color);
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    .offer p {
+      font-size: 1.1rem;
+      max-width: 700px;
+      margin: 0 auto 1.5rem;
+    }
+    
+    .offer strong {
+      color: var(--primary-color);
+      font-weight: 600;
+    }
+    
+    .testimonials {
+      background-color: white;
+      padding: 0rem 1rem;
+      padding-bottom: 3rem;
+    }
+    
+    .testimonial {
+      background-color: var(--light-accent);
+      padding: 1.5rem;
+      border-radius: 10px;
+      margin-bottom: 1.5rem;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+      box-shadow: var(--shadow);
+      border-left: 4px solid var(--primary-color);
+    }
+    
+    .testimonial br {
+      display: block;
+      margin: 0.5rem 0;
+    }
+    
+    .gallery {
+      background-color: white;
+      padding: 3rem 1rem;
+      border-top: 1px solid #e2e8f0;
+    }
+    
+    .gallery h2, .testimonials h2 {
+      text-align: center;
+      margin-bottom: 3rem;
+      color: var(--primary-color);
+      font-size: 2rem;
+    }
+    
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+      padding: 0 1rem;
+    }
+    
+    .gallery-item {
+      position: relative;
+      overflow: hidden;
+      height: 400px;
+      border-radius: 10px;
+      box-shadow: var(--shadow);
+      transition: all 0.3s ease;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 450px;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+    
+    .gallery-item img:hover {
+      transform: scale(1.05);
+    }
+    
+    .cta {
+      text-align: center;
+      padding: 4rem 1rem;
+      background: linear-gradient(135deg, var(--primary-color), #2a0a5e);
+      color: white;
+    }
+  
+    
+    .cta a {
+      background-color: var(--secondary-color);
+      color: var(--primary-color);
+      padding: 1rem 2.5rem;
+      text-decoration: none;
+      border-radius: 50px;
+      font-size: 1.2rem;
+      font-weight: 600;
+      display: inline-block;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      transition: all 0.3s ease;
+      border: 2px solid var(--secondary-color);
+    }
+    
+    .cta a:hover {
+      background-color: transparent;
+      color: var(--secondary-color);
+      transform: translateY(-3px);
+      box-shadow: 0 7px 20px rgba(0, 0, 0, 0.3);
+    }
+    
+    .cta a i {
+      margin-right: 10px;
+    }
+    
+    .location {
+      background-color: var(--secondary-color);
+      padding: 3rem 1rem;
+      text-align: center;
+      color: var(--text-dark);
+    }
+    
+    .location p {
+      margin: 0.5rem 0;
+      font-size: 1.1rem;
+    }
+    
+    .social-links-text{
+      margin-top: 2.0rem;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 0.2rem;
+    }
+    
+    .social-links a {
+      color: var(--primary-color);
+      font-size: 1.5rem;
+      transition: transform 0.3s ease;
+    }
+    
+    .social-links a:hover {
+      transform: translateY(-3px);
+    }
+    
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      header h1 {
+        font-size: 1.8rem;
+      }
+      
+      header p {
+        font-size: 1rem;
+      }
+      
+      .benefits {
+        grid-template-columns: 1fr;
+        padding: 3rem 1rem;
+      }
+      
+      .gallery-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      }
+      
+      .gallery-item{
+        height: 320px;
+      }
+
+      .gallery-item img {
+        height: 100%;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      header {
+        padding: 2rem 1rem;
+      }
+      
+      header h1 {
+        font-size: 1.5rem;
+      }
+      
+      .hero-image {
+        max-height: 350px;
+      }
+      .gallery-item{
+        height: 500px;
+      }
+
+      .gallery-item img {
+        height: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo-container">
+      <img src="imagens/Logo variante.png" alt="Logo Moda para Toda Família" class="logo">
+    </div>
+    <div class="header-text-container">
+      <h1>Moda para Toda a Família com Qualidade e Preço Justo</h1>
+      <p>Vista você e quem você ama com roupas confortáveis, estilosas e acessíveis. Aqui tem moda pensada para o dia a dia da sua família.</p>
+    </div>
+  </header>
+
+  <img src="imagens/Post Inauguração.png" alt="Foto da loja" class="hero-image">
+
+  <section class="benefits">
+    <div>Peças até o tamanho 70</div>
+    <div>Atendimento direto no WhatsApp</div>
+    <div>Peças novas toda semana</div>
+    <div>Entregamos em todo Brasil</div>
+  </section>
+
+  <section class="offer">
+    <h2>👕 Moda para toda a família com estilo e conforto!</h2>
+    <p>Roupas selecionadas com foco em qualidade e ótimo custo-benefício.</p>
+    <p><strong>Garanta já a sua!</strong></p>
+  </section>
+
+  <section class="gallery">
+    <h2>Confira algumas das nossas peças</h2>
+    <div class="gallery-grid">
+      <div class="gallery-item">
+        <img src="imagens/CAMISETA BASICA MASC. - REF 242506.png" alt="Peça 1">
+      </div>
+      <div class="gallery-item">
+      <img src="imagens/JAQUETA JEANS MASC. - REF 502848.png" alt="Peça 2">
+      </div>
+      <div class="gallery-item">
+      <img src="imagens/CAMISA CROPPED JEANS - REF 105622.png" alt="Peça 3">
+      </div>
+      <div class="gallery-item">
+      <img src="imagens/REGATA BÁSICA FEM. - 122.png" alt="Peça 4">
+      </div>
+    </div>
+  </section>
+
+  <section class="testimonials">
+    <h2>Venha para a Valorize Store!</h2>
+
+  </section>
+
+  <section class="cta">
+    <a id="btn-whatsapp" href="https://wa.me/5518991192711" target="_blank"><i class="fab fa-whatsapp"></i> Entre em Contato</a>
+  </section>
+
+  <section class="location">
+    <div class="social-links-text">Nos Siga nas Redes Sociais</div>
+    <div class="social-links">
+      <a href="https://www.instagram.com/valorizestore.oficial/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.facebook.com/valorizejeansoficial/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://wa.me/5518991192711" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+    </div>
+  </section>
+
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NSP2RG4Z"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+</body>
+</html>
