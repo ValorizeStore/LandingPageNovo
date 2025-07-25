@@ -103,7 +103,7 @@
       background-color: var(--light-accent);
     }
     
-    .benefits div {
+    .benefits a {
       background-color: white;
       padding: 1.5rem;
       border-radius: 10px;
@@ -113,20 +113,30 @@
       box-shadow: var(--shadow);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       border-left: 4px solid var(--accent-color);
+      text-decoration: none;
+      color: var(--text-dark);
+      transition: all 0.3s ease;
     }
     
-    .benefits div:hover {
+    .benefits a:hover {
       transform: translateY(-5px);
       box-shadow: 0 10px 15px rgba(58, 12, 163, 0.2);
+      color: var(--text-light);
+      background-color: var(--primary-color);
     }
     
-    .benefits div::before {
+    .benefits a::before {
       content: "✓";
       color: var(--primary-color);
       font-weight: bold;
       font-size: 1.2rem;
+      transition: all 0.3s ease;
     }
     
+    .benefits a:hover::before{
+      color: var(--text-light);
+    }
+
     .offer {
       background: linear-gradient(to right, var(--light-accent), white);
       padding: 0rem 1rem;
@@ -261,7 +271,7 @@
     }
     
     .social-links-text{
-      margin-top: 2.0rem;
+      margin-top: none;
     }
 
     .social-links {
@@ -274,11 +284,16 @@
     .social-links a {
       color: var(--primary-color);
       font-size: 1.5rem;
-      transition: transform 0.3s ease;
+      transition: all 0.3s ease;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
     }
     
     .social-links a:hover {
       transform: translateY(-3px);
+      color: var(--text-light);
+      background-color: var(--primary-color);
     }
     
     @media (max-width: 768px) {
@@ -350,10 +365,10 @@
   <img src="imagens/Post-Inauguração.webp" alt="Foto da loja" class="hero-image">
 
   <section class="benefits">
-    <div>Peças até o tamanho 70</div>
-    <div>Atendimento direto no WhatsApp</div>
-    <div>Peças novas toda semana</div>
-    <div>Entregamos em todo o Brasil</div>
+    <a id="btn-zap-benefit-plus-size" href="https://wa.link/cbg7bj">Peças até o tamanho 70</a>
+    <a id="btn-zap-benefit-video" href="https://wa.link/dywcje">Atendimento e chamada de vídeo direto no WhatsApp</a>
+    <a id="btn-zap-benefit-novidade" href="https://wa.link/rq6uww">Peças novas toda semana</a>
+    <a id="btn-zap-benefit-entrega" href="https://wa.link/7bxlkn">Entregamos em todo o Brasil</a>
   </section>
 
   <section class="offer">
@@ -386,7 +401,7 @@
   </section>
 
   <section class="cta">
-    <a id="btn-whatsapp" href="https://wa.me/5518991192711"><i class="fab fa-whatsapp"></i> Entre em Contato</a>
+    <a id="btn-whatsapp" href="https://wa.link/ctey00"><i class="fab fa-whatsapp"></i> Entre em Contato</a>
   </section>
 
   <section class="location">
